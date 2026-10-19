@@ -3,7 +3,7 @@
 
 A personal portfolio website with a clean, professional design and smooth animations.
 
-**Live site:** https://ldmanasavarshini-aura.github.io/portfolio/
+**Live site:** https://ldmanasavarshini-aura.github.io/Portfolio_new/
 
 ## About
 
