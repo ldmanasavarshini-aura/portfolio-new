@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manasavarshini L.D. | IT Student & Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f9fc;--surf:#fff;--ink:#14263d;--muted:#5a6b80;--a:#0b7f84;--hl:#e0a032;--line:#dbe3ee;--tag:#e8f3f4;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1826;--surf:#13243a;--ink:#e9eef6;--muted:#93a4ba;--a:#4fd1d6;--hl:#f0b94f;--line:#243750;--tag:#16313f}}
+:root[data-theme="dark"]{--bg:#0d1826;--surf:#13243a;--ink:#e9eef6;--muted:#93a4ba;--a:#4fd1d6;--hl:#f0b94f;--line:#243750;--tag:#16313f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1.06rem;line-height:1.7}
+a{color:var(--a)}
+:focus-visible{outline:3px solid var(--hl);outline-offset:3px}
+.layout{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:300px 1fr;gap:64px;padding:0 28px}
+aside{position:sticky;top:0;align-self:start;height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:64px 0 40px;animation:in .9s ease-out both}
+@keyframes in{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:none}}
+h1{font-family:"Source Serif 4",Georgia,serif;font-size:2.5rem;line-height:1.1;margin:0 0 12px;font-weight:700}
+.role{color:var(--muted);margin:0 0 6px}
+.bar{height:4px;width:0;background:var(--hl);border-radius:4px;margin:18px 0 28px;animation:draw 1s .5s ease-out forwards}
+@keyframes draw{to{width:64px}}
+nav ul{list-style:none;margin:0;padding:0}
+nav a{display:flex;align-items:center;gap:12px;padding:6px 0;color:var(--muted);text-decoration:none;font-weight:600}
+nav a::before{content:"";height:2px;width:18px;background:var(--line);transition:width .3s,background .3s}
+nav a:hover,nav a.on{color:var(--ink)}
+nav a.on::before{width:44px;background:var(--a)}
+.contact a{display:block;color:var(--muted);text-decoration:none;font-weight:500;padding:2px 0;word-break:break-all}
+.contact a:hover{color:var(--a)}
+main{padding:64px 0 40px}
+section{margin-bottom:64px}
+h2{font-family:"Source Serif 4",Georgia,serif;font-size:1.7rem;margin:0 0 22px;position:relative;padding-bottom:12px}
+h2::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--a);border-radius:3px;transition:width .8s ease-out}
+section.seen h2::after{width:56px}
+.skillrow{display:grid;grid-template-columns:140px 1fr;gap:8px 20px;padding:14px 0;border-bottom:1px solid var(--line)}
+.skillrow b{color:var(--muted);font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.tags li{background:var(--tag);color:var(--ink);border-radius:6px;padding:3px 11px;font-size:.92rem;transition:background .2s,color .2s,transform .2s}
+.tags li:hover{background:var(--a);color:var(--bg);transform:translateY(-2px)}
+.proj{background:var(--surf);border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+.proj:hover,.proj.open{border-color:var(--a)}
+.proj button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 20px}
+.proj button:focus-visible{outline:3px solid var(--hl);outline-offset:-3px}
+.proj h3{margin:0;font-size:1.12rem;font-weight:600}
+.proj .sub{display:block;color:var(--muted);font-size:.95rem;font-weight:400;margin-top:2px}
+.plus{flex:none;width:22px;height:22px;position:relative}
+.plus::before,.plus::after{content:"";position:absolute;left:3px;right:3px;top:10px;height:2px;background:var(--a);transition:transform .3s}
+.plus::after{transform:rotate(90deg)}
+.open .plus::after{transform:rotate(0)}
+.more{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.open .more{grid-template-rows:1fr}
+.more>div{overflow:hidden}
+.more .in{padding:0 20px 20px}
+.more p{margin:0 0 12px;color:var(--muted)}
+.tl{list-style:none;margin:0;padding:0 0 0 26px;border-left:2px solid var(--line)}
+.tl li{position:relative;margin-bottom:22px}
+.tl li::before{content:"";position:absolute;left:-34px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--a)}
+.tl b{display:block;color:var(--a);font-weight:600}
+.edu{background:var(--surf);border:1px solid var(--line);border-left:5px solid var(--hl);border-radius:10px;padding:18px 20px}
+.edu b{font-size:1.1rem}
+.cbtns{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:14px}
+.cbtn{display:block;background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:18px 20px;text-decoration:none;color:var(--ink);position:relative;overflow:hidden;transition:transform .25s,border-color .25s}
+.cbtn::before{content:"";position:absolute;inset:0;background:var(--a);transform:translateY(100%);transition:transform .3s ease;z-index:0}
+.cbtn b,.cbtn span{position:relative;z-index:1;display:block;transition:color .3s}
+.cbtn b{font-size:1.15rem}
+.cbtn span{color:var(--muted);font-size:.92rem;word-break:break-all}
+.cbtn:hover{transform:translateY(-4px);border-color:var(--a)}
+.cbtn:hover::before{transform:none}
+.cbtn:hover b,.cbtn:hover span{color:var(--bg)}
+.copy{font:inherit;font-weight:600;cursor:pointer;background:none;border:2px solid var(--a);color:var(--a);border-radius:999px;padding:8px 20px}
+.copy:hover{background:var(--a);color:var(--bg)}
+footer{color:var(--muted);font-size:.92rem;padding-top:24px;border-top:1px solid var(--line)}
+@media (max-width:860px){
+ .layout{grid-template-columns:1fr;gap:0;padding:0 20px}
+ aside{position:static;height:auto;padding:44px 0 8px}
+ nav{display:none}
+ .contact{margin-top:18px}
+ main{padding-top:24px}
+ .skillrow{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.bar{width:64px}section h2::after{width:56px}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside>
+<div>
+<h1>Manasavarshini L.D.</h1>
+<p class="role">B.Tech Information Technology student</p>
+<p class="role">Seeking a software internship</p>
+<div class="bar"></div>
+<nav aria-label="Sections"><ul>
+<li><a href="#about" class="on">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#journey">Journey</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul></nav>
+</div>
+<div class="contact">
+<a href="mailto:manasavarshinild11@gmail.com" target="_blank" rel="noopener noreferrer">manasavarshinild11@gmail.com</a>
+<a href="https://github.com/ldmanasavarshini-aura" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+<a href="https://www.linkedin.com/in/manasavarshini-l-d-4b5516367" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+</div>
+</aside>
+
+<main>
+<section id="about">
+<h2>About</h2>
+<div class="edu"><b>Sri Shakthi Institute of Engineering and Technology</b><br>B.Tech Information Technology, Coimbatore · 2025–2029 · CGPA 7.9/10</div>
+<p>I have a strong base in Java, Object-Oriented Programming and Data Structures and Algorithms. I like building practical AI apps, especially in healthcare. I want to grow my skills through an internship, research and real projects.</p>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="skillrow"><b>Languages</b><ul class="tags"><li>Java</li><li>C</li><li>C++</li><li>Python</li></ul></div>
+<div class="skillrow"><b>Web</b><ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript (basics)</li><li>React</li></ul></div>
+<div class="skillrow"><b>Core concepts</b><ul class="tags"><li>OOP</li><li>Data Structures and Algorithms</li></ul></div>
+<div class="skillrow"><b>Tools</b><ul class="tags"><li>Git</li><li>GitHub</li><li>VS Code</li><li>Antigravity</li></ul></div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="proj open"><button aria-expanded="true"><h3>Jeevan AI<span class="sub">Rural healthcare access platform · SIH 2026</span></h3><span class="plus"></span></button>
+<div class="more"><div><div class="in"><p>Helps people in rural areas book consultations, find clinics and get an AI-assisted health risk check. Reached the 4th round of the college selection for Smart India Hackathon 2026.</p></div></div></div></div>
+
+<div class="proj"><button aria-expanded="false"><h3>Intelligent Document Assistant<span class="sub">AI app to chat with documents</span></h3><span class="plus"></span></button>
+<div class="more"><div><div class="in"><p>Lets you ask questions about a document and get the relevant information back.</p><ul class="tags"><li>React</li><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>OpenAI API</li><li>Vite</li><li>PDF.js</li></ul></div></div></div></div>
+
+<div class="proj"><button aria-expanded="false"><h3>Smart EV Project (VOLTIX)<span class="sub">EV charging made simple</span></h3><span class="plus"></span></button>
+<div class="more"><div><div class="in"><p>Find charging stations, check availability, book slots and manage charging sessions on one platform.</p><ul class="tags"><li>React.js</li><li>Node.js</li><li>Express.js</li><li>SQLite</li><li>REST APIs</li><li>JWT</li><li>HTML5</li><li>CSS3</li></ul></div></div></div></div>
+
+<div class="proj"><button aria-expanded="false"><h3>AI Interview Generator<span class="sub">Built in a 24-hour hackathon</span></h3><span class="plus"></span></button>
+<div class="more"><div><div class="in"><p>A web app that creates interview questions using AI.</p><ul class="tags"><li>React</li><li>Vite</li></ul></div></div></div></div>
+
+<div class="proj"><button aria-expanded="false"><h3>Java Applications<span class="sub">Four console-style systems</span></h3><div class="plus"></div></button>
+<div class="more"><div><div class="in"><p><b>Train Reservation:</b> search trains and book tickets.<br><b>Online Banking:</b> accounts and transactions.<br><b>Student Management:</b> organize student records.<br><b>Smart Expense Tracker:</b> track daily expenses.</p><ul class="tags"><li>Java</li><li>OOP</li></ul></div></div></div></div>
+</section>
+
+<section id="journey">
+<h2>Journey</h2>
+<ul class="tl">
+<li><b>24 Oct 2025</b>Presented the research paper “Digital Twin + Smart Sensors for Aging Infrastructure” at Kallikrates ’25, KPR College.</li>
+<li><b>14 Jul 2026</b>Agentic AI Webinar, Brand Monk Academy (Certificate of Participation).</li>
+<li><b>22–23 Jul 2026</b>HackSprint ’26, 24-hour hackathon at Sri Shakthi Institute. Built the AI Interview Generator.</li>
+<li><b>2026</b>Smart India Hackathon, College Round. Built Jeevan AI and reached the 4th round. Also built a Unity game at a gamethon.</li>
+</ul>
+<p>Certified in Programming Fundamentals: Java, C, C++ and Python.</p>
+</section>
+<section id="contact">
+<h2>Contact</h2>
+<p>Tap a button to open my accounts in a new tab.</p>
+<div class="cbtns">
+<a class="cbtn" href="https://github.com/ldmanasavarshini-aura" target="_blank" rel="noopener noreferrer"><b>GitHub</b><span>ldmanasavarshini-aura</span></a>
+<a class="cbtn" href="https://www.linkedin.com/in/manasavarshini-l-d-4b5516367" target="_blank" rel="noopener noreferrer"><b>LinkedIn</b><span>Manasavarshini L.D.</span></a>
+<a class="cbtn" href="mailto:manasavarshinild11@gmail.com" target="_blank" rel="noopener noreferrer"><b>Email</b><span>manasavarshinild11@gmail.com</span></a>
+</div>
+<button class="copy" id="copy" type="button">Copy email address</button>
+</section>
+<footer>© 2026 Manasavarshini L.D.</footer>
+</main>
+</div>
+
+<script>
+(function(){
+// accordion
+document.querySelectorAll(".proj button").forEach(function(b){
+  b.addEventListener("click",function(){
+    var p=b.parentElement,o=p.classList.toggle("open");
+    b.setAttribute("aria-expanded",o);
+  });
+});
+// scroll-spy + heading rules
+var links={};document.querySelectorAll("nav a").forEach(function(a){links[a.getAttribute("href").slice(1)]=a;});
+var secs=document.querySelectorAll("section");
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.classList.add("seen");
+      Object.keys(links).forEach(function(k){links[k].classList.toggle("on",k===e.target.id);});
+    }
+  });
+},{rootMargin:"-30% 0px -60% 0px"});
+secs.forEach(function(s){io.observe(s);});
+var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add("seen");});},{threshold:.15});
+secs.forEach(function(s){io2.observe(s);});
+// copy email
+var cb=document.getElementById("copy");
+cb.addEventListener("click",function(){
+  var e="manasavarshinild11@gmail.com";
+  function done(){cb.textContent="Copied!";setTimeout(function(){cb.textContent="Copy email address";},1800);}
+  try{navigator.clipboard.writeText(e).then(done,fb);}catch(x){fb();}
+  function fb(){var t=document.createElement("textarea");t.value=e;document.body.appendChild(t);t.select();try{document.execCommand("copy");}catch(y){}document.body.removeChild(t);done();}
+});
+})();
+</script>
+</body>
+</html>
